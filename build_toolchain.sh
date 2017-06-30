@@ -113,7 +113,7 @@ echo "===================================================================="
 mkdir -p build/llvmR
 if [ ! -f build/llvmR/.config.succeeded ]; then
     cd build/llvmR && \
-    cmake -DCMAKE_BUILD_TYPE=Release -G Ninja -DCMAKE_INSTALL_PREFIX=$TOOLCHAIN_DIR/clang -DCMAKE_CXX_FLAGS="-std=c++11 -stdlib=libc++" -DLLVM_ENABLE_CXX1Y=ON -DLLVM_TARGETS_TO_BUILD=$LLVM_TARGETS -DLLVM_TARGET_ARCH=X86 -DLLVM_CREATE_XCODE_TOOLCHAIN=$BUILD_XCODE ../../sources/llvm && \
+    cmake -DCMAKE_BUILD_TYPE=Release -G Ninja -DCMAKE_INSTALL_PREFIX=$TOOLCHAIN_DIR/clang -DLLVM_ENABLE_CXX1Y=ON -DLLVM_TARGETS_TO_BUILD=$LLVM_TARGETS -DLLVM_TARGET_ARCH=X86 -DLLVM_CREATE_XCODE_TOOLCHAIN=$BUILD_XCODE ../../sources/llvm && \
     touch .config.succeeded && \
     cd ../.. || exit 1
 else
